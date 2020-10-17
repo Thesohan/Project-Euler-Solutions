@@ -22,18 +22,20 @@ What is the index of the first term in the Fibonacci sequence to contain 1000 di
 
 import math
 
-targetDigits = 1000
+def getTermWithDigits(targetDigits: int):
 
-previous = 1
-current = 1
-# we start counting the fibonacci indexes from the second element => term counter is 2
-termCounter = 2
+    previous = 1
+    current = 1
+    # we start counting the fibonacci indexes from the second element => term counter is 2
+    termCounter = 2
 
-# log of 10 gives us the current number of digits in the fibonacci number
-while(math.log10(current) < targetDigits):
-    termCounter +=1
-    temp = previous
-    previous = current
-    current = temp + previous
+    # log of 10 gives us the current number of digits in the fibonacci number
+    while(math.log10(current) < targetDigits):
+        termCounter +=1
+        temp = previous
+        previous = current
+        current = temp + previous
+    
+    return termCounter
 
-print("First Fibonacci term with " + str(targetDigits) + " digits is term: " + str(termCounter))
+print("First Fibonacci term with " + str(1000) + " digits is term: " + str(getTermWithDigits(1000)))
