@@ -7,6 +7,22 @@ The text file, keylog.txt (https://projecteuler.net/project/resources/p079_keylo
 Given that the three characters are always asked for in order, analyse the file so as to determine the shortest possible secret passcode of unknown length.
 """
 
+
+def place_fragment(code, frags):
+    if len(frags) == 0:                             #If there are no fragments, the code is done
+        return code
+
+    head = { f[0] for f in frags }                  #All first digits
+    tail = { t for f in frags for t in f[1:] }      #All tailing digits have some digit before it
+
+    next_frag = (head - tail).pop()                 #Next digit fragment is digit which is not a tailing digit
+    next_code = code + next_frag                    #Append next digit fragment to existing code
+
+    next_frags = [f.replace(next_frag, '') for f in frags if f != next_frag]    #Remove found digit from fragments, filter empty fragments
+    
+    return place_fragment(next_code, next_frags)    #Place next digit fragment based on new fragments
+
+
 def solution(file_path):
     """
     This solution assumes passcodes do not have duplicate numbers 
@@ -25,28 +41,12 @@ def solution(file_path):
     9. There are no more fragments, the code is the chosen digits in the order chosen.
     """
 
-    def place_fragment(code, frags):
-        if len(frags) == 0:                             #If there are no fragments, the code is done
-            return code
-
-        head = { f[0] for f in frags }                  #All first digits
-        tail = { t for f in frags for t in f[1:] }      #All tailing digits have some digit before it
-
-        next_frag = (head - tail).pop()                 #Next digit fragment is digit which is not a tailing digit
-        next_code = code + next_frag                    #Append next digit fragment to existing code
-
-        next_frags = [f.replace(next_frag, '') for f in frags if f != next_frag]    #Remove found digit from fragments, filter empty fragments
-        
-        return place_fragment(next_code, next_frags)    #Place next digit fragment based on new fragments
-
-
     with open(file_path, 'r') as file:
         fragments = file.readlines()
-
 
     return place_fragment("", [p.strip() for p in fragments])   #Initialize with empty code and trim whitespace from fragments
 
 
 
 if __name__ == "__main__":
-	print(solution("problem_79/keylog.txt"))
+    print(solution("problem_79/keylog.txt"))
