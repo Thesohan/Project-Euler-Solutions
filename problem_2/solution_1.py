@@ -1,3 +1,7 @@
+"""
+Problem 2: https://projecteuler.net/problem=2
+"""
+
 f = [1, 1]
 
 while f[-1] < 4000000:
