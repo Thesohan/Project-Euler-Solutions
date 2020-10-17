@@ -7,5 +7,8 @@
 # Coding guidelines
 + Please use `python3` for coding
 + Folow PEP8 coding standards
++ Do add the problem number and link to the problem at the top of the file as a comment
+  + Optionally copy-paste the question too
++ Add a function that returns the solution
 
 Try to come up with as many different variants to solve the question as possible and add them!
