@@ -1,6 +1,6 @@
 # How to contribute to this repository
 + Fork this repo
-+ Create a new folder for each problem with the naming convention `problem_<problem_number>`
++ Create a new folder for each problem with the naming convention `problem_<problem_number>` where `<problem_number>` is a 3 digit number like 001, 002, 003 and so on
 + In each folder add solutions with the name `solution_<solution_number>`
    + ##### Example: `solution_1.py`, and if `solution_1.py` already exists, name your file as `solution_2.py`
 + Make a PR stating the problem for which, you've provided the solution
