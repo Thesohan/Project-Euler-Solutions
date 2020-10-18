@@ -3,6 +3,6 @@ A repository containing solutions to [Project Euler problems](https://projecteul
 
 Follow the contribution guidelines for contributing to this repo
 
-[English version](https://github.com/Aryaak/Project-Euler-Solutions/blob/spanish/CONTRIBUTE.md)
+[English version](https://github.com/volt9801/Project-Euler-Solutions/blob/CONTRIBUTE.md)
 
-[Spanish version](https://github.com/Aryaak/Project-Euler-Solutions/blob/spanish/CONTRIBUTE.es.md)
+[Spanish version](https://github.com/volt9801/Project-Euler-Solutions/blob/CONTRIBUTE.es.md)
